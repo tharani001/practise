@@ -446,8 +446,28 @@ def peakIndex(arr):
 
 print(peakIndex(mountain_arr))
 
+
+# Count Frequency
+#Method -  1
 freq = [1,2,2,2,4,1]
 num_counts = {}
 for num in freq:
     num_counts[num] = freq.count(num)
 print(num_counts)
+
+# Method - 2
+count_freqs = {}
+
+nums = [12,2,3,4,2,34,4]
+for num in nums:
+    if num not in count_freqs:
+        count_freqs[num] = 1
+    else:
+        count_freqs[num] += 1
+print(count_freqs)
+
+# Method - 3 
+
+from collections import Counter
+
+print(dict(Counter(nums)))

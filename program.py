@@ -492,3 +492,89 @@ print(next(gen)) #2
 print(next(gen)) #3
 print(list(gen)) #4
 # [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99]
+
+strings = ["foo","boo","ptyhto","love"]
+
+# Sort the strings by the number of distinct letters
+strings.sort(key=lambda x: len(set(x)),reverse=True) 
+
+print(strings)
+
+# Loops like for or while are not allowed in lambda function.
+# You can use list comprehensions (which are expressions, not loops).
+# map, filter, reduce are allowed in lambda function.
+
+square_list = lambda x: [i**2 for i in x]
+print(square_list([1, 2, 3, 4]))  # Output: [1, 4, 9, 16]
+
+all_data = [['Tom', 'Billy', 'Jefferson', 'Andrew', 'Wesley', 'Steven', 'Joe'],
+            ['Susie', 'Casey', 'Jill', 'Ana', 'Eva', 'Jennifer', 'Stephanie']]
+
+names_of_interest = []
+for names in all_data:
+    enough_es = [name for name in names if name.count('e') > 2]
+    names_of_interest.extend(enough_es)
+
+result = [name for names in all_data for name in names if name.count('e') >= 2]
+
+print(result)
+
+some_tuples = [(1, 2, 3), (4, 5, 6), (7, 8, 9)]
+
+flattened = [x for tup in some_tuples for x in tup]
+
+print(flattened)
+
+# Hashable object can be used as the dictionary key
+print(hash(1)) # hash takes only one argument
+
+# print(hash([12,24])) # TypeError: unhashable type: 'list'
+
+# Creating dictionary from sequences
+key_list = range(5)
+value_list = reversed(range(5))
+mapping = {}
+for key, value in zip(key_list, value_list):
+    mapping[key] = value
+print(mapping)
+
+# reversed iterates over the elements of a sequence in reverse order
+for num in reversed([1,2,2,3,4,5,5]):
+    print(num)
+
+# zip is used to simultaneously iterate over multiple sequences
+# the number of elements it produces is determined by the shortest sequence
+seq1 = ['foo', 'bar', 'baz']
+seq2 = ['one', 'two', 'three']
+seq3 = [False, True]
+
+for idx, (a,b,c) in enumerate(zip(seq1, seq2, seq3)):
+    print(f"{idx} : {(a,b,c)}")
+
+# Built in sequence functions are enumerate, zip, sorted, reversed
+
+# Python’s float function is capable of casting a string to a floating point number, but fails with ValueError on improper inputs
+float('1.2345')
+# float('something')
+
+def attempt_float(x):
+    try:
+        return float(x)
+    except:
+        return x
+# exceptions must be handled gracefully in building robust programs
+
+# code in exception block will be executed if the try block raises an exception
+
+# finally can be used when you want to suppress an exception, it will always get executed no matter what
+
+# f = open(path, 'w')
+# try:
+#    f.write("a")
+# except:
+#     print ('Failed')
+# else:
+#     print ('Succeeded')
+# finally:
+#     f.close()
+

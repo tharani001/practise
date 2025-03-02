@@ -613,3 +613,9 @@ print(Baseclass.clsmethod())
 
 # Summary: You can call the class method and static method directly without an instance. Instance method(self) must be called with a class instance ONLY.
 
+def foo(*args,**kwargs):
+    print(*args) #unpacked the tuple
+    print(*kwargs) #unpacking dict returns key only
+    print(kwargs)
+
+foo(1,2,3,4,4,a=10,b=12)

@@ -578,3 +578,7 @@ def attempt_float(x):
 # finally:
 #     f.close()
 
+from datetime import datetime
+data_str = "10-09-2025"
+
+print(datetime.strptime(data_str,"%d-%m-%Y").strftime("%d - %b - %Y"))

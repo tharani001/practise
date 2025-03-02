@@ -619,3 +619,5 @@ def foo(*args,**kwargs):
     print(kwargs)
 
 foo(1,2,3,4,4,a=10,b=12)
+
+# The way that function arguments work under the hood is actually very simple. positional args are packed in tuples and keyword arguments are packed in dict.

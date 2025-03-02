@@ -582,3 +582,34 @@ from datetime import datetime
 data_str = "10-09-2025"
 
 print(datetime.strptime(data_str,"%d-%m-%Y").strftime("%d - %b - %Y"))
+
+
+class Father:
+    def __init__(self): # Constructor is a magic method
+        print("This is Parent class")
+    def show(self):
+        print("Access the parent method")
+
+class Child(Father):
+    def __init__(self): # Constructor is a magic method
+        print("This is Child class")
+child = Child()
+child.show()
+# Output:
+# This is Child class
+# Access the parent method
+print(issubclass(Child,Father)) # True
+
+class Baseclass:
+    @staticmethod
+    def static():
+        print("Static method can be called without instance")
+    @classmethod
+    def clsmethod(cls):
+        print("Class method can be called without instance")
+
+print(Baseclass.static())
+print(Baseclass.clsmethod())
+
+# Summary: You can call the class method and static method directly without an instance. Instance method(self) must be called with a class instance ONLY.
+

@@ -578,11 +578,6 @@ def attempt_float(x):
 # finally:
 #     f.close()
 
-from datetime import datetime
-data_str = "10-09-2025"
-
-print(datetime.strptime(data_str,"%d-%m-%Y").strftime("%d - %b - %Y"))
-
 
 class Father:
     def __init__(self): # Constructor is a magic method
@@ -621,3 +616,31 @@ def foo(*args,**kwargs):
 foo(1,2,3,4,4,a=10,b=12)
 
 # The way that function arguments work under the hood is actually very simple. positional args are packed in tuples and keyword arguments are packed in dict.
+
+# Time series is a series of observations collected at specified interval usually equal intervals.
+
+from datetime import datetime
+
+print(datetime.now(),"\n",datetime.now().year,datetime.now().month,datetime.now().day,"\n",datetime.now().hour,datetime.now().minute,datetime.now().second,datetime.now().microsecond)
+
+print(datetime(2020,2,2) - datetime(2025,2,2)) # -1827 days, 0:00:00
+print(datetime(2020,2,2) - datetime(2000,2,2)) # 7305 days, 0:00:00
+print((datetime(2020,2,2) - datetime(2000,2,2)).days)# 7305 days, 0:00:00
+
+from datetime import datetime
+data_str = "10-09-2025"
+
+print(datetime.strptime(data_str,"%d-%m-%Y")) # strptime converts string to datetime.
+print(datetime.strptime(data_str,"%d-%m-%Y").strftime("%d - %b - %Y")) # strftime converts datetime to strings.
+
+# Never use methods when iterating over the file
+with open("sample.txt") as f:
+        for line in f:
+            print(line)
+f.close()
+
+# readline reads a single line only and returns the string data.
+with open("sample.txt") as f:
+    for i in range(len(f.readlines())):
+        content = f.readline()
+        print(content)

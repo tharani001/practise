@@ -639,8 +639,9 @@ with open("sample.txt") as f:
             print(line)
 f.close()
 
-# readline reads a single line only and returns the string data.
+# readline reads only one line at a time.
 with open("sample.txt") as f:
-    for i in range(len(f.readlines())):
         content = f.readline()
-        print(content)
+        while content:
+            print(content)
+            content = f.readline()

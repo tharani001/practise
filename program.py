@@ -645,3 +645,6 @@ with open("sample.txt") as f:
         while content:
             print(content)
             content = f.readline()
+
+# When pvalue < 0.05 and large test statistic, it is statistically significant - something real is happening
+# When pvalue > 0.05 and small test statistic, it is statistically insignificant - could be luck

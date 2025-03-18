@@ -648,3 +648,14 @@ with open("sample.txt") as f:
 
 # When pvalue < 0.05 and large test statistic, it is statistically significant - something real is happening
 # When pvalue > 0.05 and small test statistic, it is statistically insignificant - could be luck
+
+from itertools import product
+# itertools product method returns the cartesian product of the iterables.
+# it generates the set of all possible ordered pairs 
+
+a = [1,2,3]
+b = [4,5,6]
+
+print([(i,j) for i in a for j in b])
+
+print([item for item in product(a,b)])

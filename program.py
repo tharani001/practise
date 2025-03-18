@@ -676,3 +676,31 @@ while left < right :
 
 if flag:
     print("Palindrome")
+
+#classes are boilerplates for the objects
+
+class Person():
+    # this is the method that runs as soon as you create an instance
+    def __init__(self,name, age):
+        self.name = name
+        self.age = age
+class Child(Person):
+    def __init__(self,child_name,name,age):
+        super().__init__(name,age)
+        self.child_name = child_name
+child_cls_inst = Child("tharani","tharan",27)
+
+print(child_cls_inst.age)
+# Inheritance allows you to extend the class by sharing its attributes and methods.
+# Parent class passes down the attributes and methods
+# child class inherits the methods and attributes
+
+
+# You'll frequently have to interact with APIs to grab data or work with systems
+import requests
+
+response = requests.get("https://api.wheretheiss.at/v1/satellites/25544")
+print(response.json())  # Now it returns proper JSON data
+
+## get request method is used to retrieve the data from the server
+## post request method is used to send data to the server.

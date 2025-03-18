@@ -659,3 +659,20 @@ b = [4,5,6]
 print([(i,j) for i in a for j in b])
 
 print([item for item in product(a,b)])
+
+test_palindrome = "malayalam"
+
+left = 0
+right = len(test_palindrome) - 1
+flag = True # assume it is a palindrome
+while left < right :
+    if test_palindrome[left] == test_palindrome[right]:
+        left += 1
+        right -= 1
+    else:
+        print("Not a Palindrome")
+        flag = False
+        break
+
+if flag:
+    print("Palindrome")
